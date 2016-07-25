@@ -14,7 +14,7 @@
       state: 'managelessons'
     });
     menuService.addMenuItem('topbar', {
-      title: 'Add Grades / Subjects',
+      title: 'Maintenance',
       state: 'maintainence'
     });
   }
