@@ -1,0 +1,123 @@
+<!-- The chat view -->
+<section class="container">
+  <div class="page-header">
+    <h1>Welcome!</h1> &nbsp; <h3> You can maintain all stff here. </h3>
+  </div>
+  <div class = "container">
+    <button class = "btn btn-primary" ng-click="vm.addSchools()">Add new school</button>
+    <button class = "btn btn-primary" ng-click="vm.addGrades()">Add new grade</button>
+    <button class = "btn btn-primary" ng-click="vm.addSections()">Add new section</button>
+    <button class = "btn btn-primary" ng-click="vm.addSubject()">Add new subject</button>
+  </div>
+
+  <div class="container" ng-show="vm.showSchoolsAdditionForm" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>School Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" ng-model="vm.school.school_name" style="width: auto" ></td>
+          <td>
+            <button class = "btn btn-info" ng-click="commitSchools(vm.school.school_name)">Add School</button>
+            <button class = "btn btn-info" ng-click="clearEnteredData()">Clear</button>
+            <button class = "btn btn-info" ng-click="showAllSchools()">Show All Schools</button>
+          </td>
+        </tr>
+        <tr ng-repeat="school in vm.fetchedSchools" ng-show="vm.showSchools">
+        <td>{{school.school_name}}</td>
+        <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container" ng-show="vm.showGradesAdditionForm" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Select School</th>
+          <th>Grade Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><select name="select" ng-model="school" ng-options="school.school_name for school in vm.schools" style="height:30px;">
+                  <option value="">Select School</option>
+                </select>
+          <td><input class="form-control" ng-model="vm.grade.grade_name" style="width: auto" ></td>
+          <td>
+            <button class = "btn btn-info" ng-click="commitGrades(school)">Add Grade</button>
+            <button class = "btn btn-info" ng-click="clearEnteredData()">Clear</button>
+            <button class = "btn btn-info" ng-click="showAllGrades()">Show All Grades</button>
+          </td>
+        </tr>
+        <tr ng-repeat="grade in vm.fetchedGrades" ng-show="vm.showAllGrades">
+        <td>{{grade.school_name}}</td>
+        <td>{{grade.grade_name}}</td>
+        <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container" ng-show="vm.showSectionsAdditionForm" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Select Grade</th>
+          <th>Section Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><select name="select" ng-model="grade" ng-options="grade.grade_name for grade in vm.grades" style="height:30px;">
+                  <option value="">Select Grade</option>
+                </select>
+          <td><input class="form-control" ng-model="vm.section.section_name" style="width: auto" ></td>
+          <td>
+            <button class = "btn btn-info" ng-click="commitSections(grade)">Add Section</button>
+            <button class = "btn btn-info" ng-click="clearEnteredData()">Clear</button>
+            <button class = "btn btn-info" ng-click="showAllSections()">Show All Sections</button>
+          </td>
+        </tr>
+        <tr ng-repeat="section in vm.fetchedSections" ng-show="vm.showAllSections">
+        <td>{{section.grade_name}}</td>
+        <td>{{section.section_name}}</td>
+        <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container" ng-show="vm.showSubjectsAdditionForm" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Subject Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" ng-model="vm.subject.subject_name" style="width: auto" ></td>
+          <td>
+            <button class = "btn btn-info" ng-click="commitSubjects(vm.subject.subject_name)">Add Subject</button>
+            <button class = "btn btn-info" ng-click="clearEnteredData()">Clear</button>
+            <button class = "btn btn-info" ng-click="showAllSubjects()">Show All Subjects</button>
+          </td>
+        </tr>
+        <tr ng-repeat="subject in vm.fetchedSubjects" ng-show="vm.showAllSubjects">
+        <td>{{subject.subject_name}}</td>
+        <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</section>

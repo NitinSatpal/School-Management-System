@@ -1,0 +1,68 @@
+<!-- The chat view -->
+<section class="container">
+  <div class="page-header">
+    <h1>Welcome!</h1> &nbsp; <h3> Please select class and subject to check and modify uploaded lessons. </h3> <h3> To upload new lessons, click on Add Lessons </h3>
+  </div>
+  <div class = "container">
+    <div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Grade</th>
+          <th>Subject</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select name="select" ng-model="grade" ng-options="grade.grade_name for grade in vm.showGrades" ng-click="" style="height:30px; width:200px;">
+                <option value="">Please Select</option>
+              </select>
+            </td>
+            <td>
+              <select name="select" ng-model="subject" ng-options="subject.subject_name for subject in vm.showSubjects" ng-click="" style="height:30px; width:200px;">
+                <option value="">Please Select</option>
+              </select>
+            </td>
+            <td>
+              <button class = "btn btn-primary" ng-click="showLessons(grade, subject)">Go</button>
+              <button class = "btn btn-primary" ng-click="addLessons(grade, subject)">Add Lessons</button>
+            </td>
+            <td>
+              <button class = "btn btn-primary" ng-click="saveData()">Save</button>
+            </td>
+            <td>
+            </td>
+          </tr>
+
+          <tr ng-show="vm.editableRow" ng-repeat="editDataFile in editableDataFiles">
+            <td>{{editDataFile.subject_name}}</td>
+            <td>{{editDataFile.grade_name}}</td>
+            <td>{{editDataFile.standard_lesson_name}}</td>
+            <td><input type="text" ng-model="editDataFile.school_specific_lesson_name"></td>
+            <td><button class="btn btn-info" ng-click="saveDataFile(editDataFile)">Save</button></td>
+          </tr>
+
+          <tr ng-repeat="dataFile in dataFiles track by $index">
+            <td>{{dataFile.subject_name}}</td>
+            <td>{{dataFile.grade_name}}</td>
+            <td>{{dataFile.standard_lesson_name}}</td>
+            <td>{{dataFile.school_specific_lesson_name}}</td>
+            <td><button class="btn btn-info" ng-click="editSchoolLessonName(dataFile._id)">Edit School Lesson Name</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div ng-show="vm.uploadLesson">
+      <form id  =  "uploadForm"
+      enctype   =  "multipart/form-data">
+        <input type = "file" file-model = "myFile" name="file"/>
+        <b>Only .xls and .xlsx files are supported.</b><br><br> 
+        <button ng-click = "uploadFile()">upload file</button>
+      </form>
+    </div>
+  </div>
+  
+</section>
