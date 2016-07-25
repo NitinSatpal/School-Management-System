@@ -9,13 +9,9 @@ Make sure you have installed all of the following prerequisites on your developm
 $ npm install -g bower
 ```
 
-* Gulp - Gulp is used to build the project and automate project tasks.
-
 ```bash
 $ npm install gulp -g
 ```
-
-* Grunt - I am using [Grunt Task Runner](http://gruntjs.com/) to automate development process as well as to run the app.
 
 ```bash
 $ npm install -g grunt-cli
@@ -29,7 +25,6 @@ The recommended way to get MEAN.js is to use git to directly clone the School-Ma
 ```bash
 $ git clone https://github.com/NitinSatpal/School-Management-System.git
 ```
-
 
 ### Downloading The Repository Zip File
 Another way is to download a zip copy. You can also do this using the `wget` command:
@@ -53,8 +48,6 @@ $ bower install
 ```
 
 ## Running Your Application
-
-The School-Management-System project integrates both Grunt and Gulp as build tools and task automation.
 
 Run your application using grunt:
 ```bash
