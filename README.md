@@ -3,7 +3,7 @@ Make sure you have installed all of the following prerequisites on your developm
 * Git - [Download & Install Git](https://git-scm.com/downloads). OSX and Linux machines typically have this already installed.
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
 * MongoDB - [Download & Install MongoDB](http://www.mongodb.org/downloads), and make sure it's running on the default port (27017).
-* Bower - You're going to use the [Bower Package Manager](http://bower.io/) to manage your front-end packages. Make sure you've installed Node.js and npm first, then install bower globally using npm:
+* Bower - I've used [Bower Package Manager](http://bower.io/) to manage the front-end packages. First instal Node.js and npm first, then install bower globally using npm:
 
 ```bash
 $ npm install -g bower
@@ -15,7 +15,7 @@ $ npm install -g bower
 $ npm install gulp -g
 ```
 
-* Grunt - (Optional) You're going to use the [Grunt Task Runner](http://gruntjs.com/) to automate your development process.
+* Grunt - I am using [Grunt Task Runner](http://gruntjs.com/) to automate development process as well as to run the app.
 
 ```bash
 $ npm install -g grunt-cli
@@ -45,8 +45,6 @@ To install Node.js dependencies you're going to use npm. In the application fold
 ```bash
 $ npm install
 ```
-
-This command does a few things:
 * It will install the dependencies needed for the application to run.
 * Finally, when the install process is over, run following command:
 
@@ -56,8 +54,7 @@ $ bower install
 
 ## Running Your Application
 
-The MEAN.JS project integrates both Grunt and Gulp as build tools and task automation, but Grunt will be deprecated in favor of Gulp.
-While you are free to use both of them directly, we have wrapped Gulp tasks with npm scripts so that regardless of the build tool running the project is transparent to you.
+The School-Management-System project integrates both Grunt and Gulp as build tools and task automation.
 
 Run your application using grunt:
 ```bash
